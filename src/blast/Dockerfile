@@ -20,8 +20,7 @@ RUN \
   cp -R /tmp/blast/ncbi-blast-$VERSION+/* $BLAST_ROOT && \
   rm -rf /tmp/* && \
   rm /root/.wget-hsts && \
-  sed -i '/PATH\=/ s@\"$@:'"$BLAST_BIN"'\"@' /etc/profile && \
-  src /etc/profile
+  sed -i '/PATH\=/ s@\"$@:'"$BLAST_BIN"'\"@' /etc/profile
 
 # Clean up
 RUN apt-get remove -y wget && \
