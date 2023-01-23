@@ -20,7 +20,7 @@ jobs:
       matrix:
         include:
           - dockerfile: ./src/blast/Dockerfile
-            image: nextflow_blast
+            image: nextflow-blast
     permissions:
       contents: read
       packages: write
@@ -40,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ matrix.image }}
+          images: ${{ env.REGISTRY }}/truemerrill/${{ matrix.image }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
