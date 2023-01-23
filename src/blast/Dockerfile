@@ -21,7 +21,7 @@ RUN \
   rm -rf /tmp/* && \
   rm /root/.wget-hsts && \
   sed -i '/PATH\=/ s@\"$@:'"$BLAST_BIN"'\"@' /etc/profile && \
-  source /etc/profile
+  . /etc/profile
 
 # Clean up
 RUN apt-get remove -y wget && \
